@@ -1,8 +1,9 @@
 #include<stdio.h>
 
 /**
- *this is the main function
- *return 0
+ *main - this is the main function
+ *puts - return string
+ *Return: always 0
  */
 
 int main(void)
