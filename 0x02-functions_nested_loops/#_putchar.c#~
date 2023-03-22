@@ -1,0 +1,17 @@
+#include <stdio.h >
+
+/**
+ * _putchar.c function prints _putchar
+ *
+ * Return: 0
+ */
+
+void _putchar(void)
+{
+  char* sent ="_putchar";
+  while (sent)
+    {
+      putchar()
+    }
+}
+  
