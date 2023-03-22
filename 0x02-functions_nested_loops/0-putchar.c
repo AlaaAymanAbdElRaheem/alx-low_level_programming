@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- *
- * main - it's a program that prints word _putchar
+ * main - entry point
  * Return: 0
  */
 
@@ -10,6 +9,7 @@ int main(void)
 {
 	char c[8] = "_putchar";
 	int i = 0;
+
 	while (i <= 7)
 	{
 		_putchar(c[i]);
