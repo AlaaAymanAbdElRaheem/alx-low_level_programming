@@ -2,21 +2,18 @@
 
 /**
  * *string_toupper -capitalize lower case character
- * @str:the string
+ * @s:the string
  * Return: the string
  */
 
 char *string_toupper(char *str)
 {
 	int i;
-	int len = 0;
 
-	for (i = 0; str[i] != '\0'; i++)
-		len++;
-	for (i = 0; i < len; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
+		if (s[i] >= 'a' && s[i] <= 'z')
+			s[i] -= 32;
 	}
-	return (str);
+	return (s);
 }
