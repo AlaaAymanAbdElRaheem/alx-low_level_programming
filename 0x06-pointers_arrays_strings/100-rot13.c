@@ -1,0 +1,27 @@
+#include "main.h"
+
+/**
+ * *rot13 - a function that encodes a string using rot13
+ * @s: the string
+ * Return: the encoded string
+ */
+
+char *rot13(char *s)
+{
+	int i, in;
+	char let[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char l[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (in = 0; in < 52; in++)
+		{
+			if (s[i] == let[in])
+			{
+				s[i] = l[in];
+				break;
+			}
+		}
+	}
+	return (s);
+}
