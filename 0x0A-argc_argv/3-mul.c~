@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+/**
+ * main - main function
+ * @argc: count of arguments
+ * @argv: value of arguments
+ * Return: 0
+ */
+
+int main(int argc, char *argv[])
+{
+	if (argc != 3)
+	{
+		printf("Error");
+		return (1);
+	}
+	else
+	  printf("%d\n", (int) argv[1] *(int) argv[2]);
+	return (0);
+}
