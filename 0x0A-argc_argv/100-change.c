@@ -5,7 +5,7 @@
  * main - main function
  * @argc: count of arguments
  * @argv: value of arguments
- * Return: 0
+ * Return: 0 or 1
  */
 
 int main(int argc, char *argv[])
@@ -24,29 +24,18 @@ int main(int argc, char *argv[])
 			printf("%d\n", 0);
 		else
 		{
-			if (cents - 25 >= 0)
+			while (cents > 0)
 			{
-				cents -= 25;
-				coins++;
-			}
-			if (cents - 10 >= 0)
-			{
-				cents -= 10;
-				coins++;
-			}
-			if (cents - 5 >= 0)
-			{
-				cents -= 5;
-				coins++;
-			}
-			if (cents - 2 >= 0)
-			{
-				cents -= 2;
-				coins++;
-			}
-			if (cents - 1 >= 0)
-			{
-				cents -= 1;
+				if (cents - 25 >= 0)
+					cents -= 25;
+				else if (cents - 10 >= 0)
+					cents -= 10;
+				else if (cents - 5 >= 0)
+					cents -= 5;
+				else if (cents - 2 >= 0)
+					cents -= 2;
+				else
+					cents -= 1;
 				coins++;
 			}
 		}
