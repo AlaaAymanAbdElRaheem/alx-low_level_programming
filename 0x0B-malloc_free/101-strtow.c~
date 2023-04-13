@@ -1,0 +1,57 @@
+#include "main.h"
+#include <stdlib.h>
+
+/**
+ * **strtow - function that splits a string into words.
+ * @str: string
+ * Return: array of words
+ */
+
+char **strtow(char *str)
+{
+	int i, ii = 0, len = 0, count = 0, word_len = 0, w = 0;
+	char **ar;
+
+	if (str == NULL || *str == '\0')
+		return (NULL);
+	for (i = 0; str[i] != '\0'; i++)
+		len++;
+	for (i = 0; i < len; i++)
+	{
+		if (str[i] != ' ')
+		{
+			if (i == 0 || str[i - 1] == ' ')
+				count++;
+		}
+	}
+	if (count == 0)
+		return (NULL);
+	ar = (char *)malloc((count + 1) * sizeof(char *));
+	if (ar == NULL)
+		return (NULL);
+	for (i = 0; i < len; i++)
+	{
+		if (str[i] != ' ')
+		{
+			if (w == 0 || str[i - 1] == ' ' || i == 0)
+				for  (word_len = 1; str[i + word_len] != ' ' && str[i + word_len] != '\0';
+				      word_len++)
+				  ;
+			ar[w] = (char *)malloc((word_len + 1) * sizeof(char));
+			if (ar[w] == NULL)
+			{
+				for (ii = 0; ii < w; ii++)
+					free(ar[ii]);
+				free(ar);
+				return (NULL);
+			}
+			for (ii = 0; ii < word_len; ii++)
+				ar[w][ii] = str[i + ii];
+			ar[w][ii] = '\0';
+			w++;
+			i += word_len;
+		}
+	}
+	ar[w] = NULL;
+	return (ar);
+}
