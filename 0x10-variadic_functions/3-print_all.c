@@ -14,7 +14,7 @@ void print_all(const char * const format, ...)
 	va_list list;
 	int i = 0, j;
 	char *sep = "";
-	struct print_type func_type[] = {
+	print_type func_type[] = {
 		{"i", print_int},
 		{"f", print_float},
 		{"c", print_char},

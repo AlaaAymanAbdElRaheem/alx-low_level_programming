@@ -9,7 +9,7 @@
  * @print_t: pointer to a function
  */
 
-struct print_type
+typedef struct print_type
 {
 char *t;
 void (*print_t)(va_list);
