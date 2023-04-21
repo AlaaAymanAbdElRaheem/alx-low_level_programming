@@ -14,12 +14,19 @@ void print_all(const char * const format, ...)
 	va_list list;
 	int i = 0, j;
 	char *sep = "";
-	print_type func_type[] = {
+	struct print_type func_type[] = {
 		{"i", print_int},
 		{"f", print_float},
 		{"c", print_char},
 		{"s", print_string},
 		{NULL, NULL}
+
+	/**
+	 * @print_type: This is longer description of print_type
+	 *
+	 * Description: it takes a function which deal with a spesicf string format
+	 *
+	 */
 	};
 
 	va_start(list, format);
