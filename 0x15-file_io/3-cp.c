@@ -24,15 +24,24 @@ int main(int argc, char *argv[])
 	{
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
-	}
+	}	
 
 	out = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	w = write(out, buf, r);
-	if (w == -1 || out == -1)
-	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+	while (r > 0)
+	  {
+		w = write(out, buf, r);
+		if (w == -1 || out == -1)
+		{
+			dprintf(2, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+		r = read(in, buf, 1024);
+		if (r == -1 || in == -1)
+		{
+			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+	  }
 
 	c1 = close(in);
 	c2 = close(out);
