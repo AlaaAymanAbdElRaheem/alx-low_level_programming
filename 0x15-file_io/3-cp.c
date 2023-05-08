@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 		w = write(out, buf, r);
-		if (w == -1 || out == -1)
+		if (w == -1 || out == -1 || w != r)
 		{
 			dprintf(2, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
