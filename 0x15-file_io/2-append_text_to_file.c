@@ -1,20 +1,20 @@
 #include "main.h"
 
 /**
- * create_file - function that creates a file.
- * @filename: pinter to the name of the file
- * @text_content: a NULL terminated string to write to the file
- * Return: 1 on success, -1
+ * append_text_to_file - function that appends text at the end of a file.
+ * @filename:  the name of the file
+ * @text_content: is the NULL terminated string
+ * Return: 1 on success and -1 on failure
  */
 
-int create_file(const char *filename, char *text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd, w, len = 0;
 
 	if (filename == NULL || text_content == NULL)
 		return (-1);
 
-	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	fd = open(filename, O_APPEND);
 	if (fd == -1)
 		return (-1);
 
