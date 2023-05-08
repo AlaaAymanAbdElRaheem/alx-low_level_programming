@@ -29,7 +29,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (r > 0)
 	{
 		w =  write(1, c, r);
-		if ((int)w == -1)
+		if ((int)w == -1 || w != r)
 		{
 			free(c);
 			close(fd);
