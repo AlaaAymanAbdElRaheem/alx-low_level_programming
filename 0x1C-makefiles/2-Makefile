@@ -1,6 +1,6 @@
 CC = gcc
-SRC = $(wildcard *.c)
-OBJ = $(subst .c,.o,$(SRC))
+SRC = main.c holberton.c
+OBJ = ${SRC:.c=.o})
 NAME = school
 
 all: ${OBJ}
