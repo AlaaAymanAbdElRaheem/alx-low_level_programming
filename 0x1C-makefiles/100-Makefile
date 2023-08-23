@@ -1,8 +1,8 @@
-CFLAGS = -Wall -Werror -Wextra -pedantic
-CC = gcc $(CFLAGS)
+CC = gcc
 SRC = main.c school.c
 OBJ = $(subst .c,.o,$(SRC))
 NAME = school
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: m.h ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
