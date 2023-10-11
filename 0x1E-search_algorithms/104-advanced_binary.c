@@ -24,29 +24,31 @@ int recursive_binary(int *array, size_t left, size_t right, int value)
 {
 	size_t mid, i;
 
-	if (left <= right)
+	if (left > right)
+		return (-1);
+
+	printf("Searching in array: ");
+	for (i = left; i <= right; i++)
 	{
-		printf("Searching in array: ");
-		for (i = left; i <= right; i++)
-		{
-			printf("%d", array[i]);
-			if (i != right)
-				printf(", ");
-		}
-		printf("\n");
-
-		mid = (left + right) / 2;
-
-		if (array[mid] == value)
-		{
-			if (array[mid - 1] == value)
-				return (mid - 1);
-			return (mid);
-		}
-		else if (array[mid] < value)
-			return (recursive_binary(array, mid + 1, right, value));
-		else
-			return (recursive_binary(array, left, mid - 1, value));
+		printf("%d", array[i]);
+		if (i != right)
+			printf(", ");
 	}
+	printf("\n");
+
+	mid = (left + right) / 2;
+
+	if (array[mid] == value)
+	{
+		if (array[mid - 1] == value)
+			return (recursive_binary(array, left, mid, value));
+		return (mid);
+	}
+	else if (array[mid] < value)
+		return (recursive_binary(array, mid + 1, right, value));
+	else
+		return (recursive_binary(array, left, mid - 1, value));
+	
 	return (-1);
+
 }
