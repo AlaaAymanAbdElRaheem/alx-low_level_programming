@@ -52,7 +52,7 @@ int recursive_binary(int *array, size_t left, size_t right, int value)
 	if (array[mid] == value)
 	{
 		if (array[mid - 1] == value)
-			return (recursive_binary(array, left, mid - 1, value));
+			return (recursive_binary(array, left, mid, value));
 		return (mid);
 	}
 	else if (array[mid] < value)
